@@ -1,15 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import Controls from './Controls';
+import UserList from './UserList';
+import Footer from './Footer';
 
 function App() {
-  let currentYear = Date();
+  let date = new Date();
+  let currentYear = date.getFullYear();
   let isLoggedIn = true;
   return (
     <div>
         <h1>ENSF-381: Full Stack Web Development</h1>
-        <p>React Components</p>
-        <p>Current Year {currentYear}</p>
-        {isLoggedIn ? <p>Welcome Back!</p> : <p>Please Login!</p>}
+        {isLoggedIn && 
+        <section>
+          <Controls />
+          <UserList />
+          <Footer />
+        </section>
+          }
     </div>
   );
 }
